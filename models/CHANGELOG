@@ -1,0 +1,79 @@
+v707:
+
+*   Improve Smart Selection quality of addresses and phone numbers for Android
+    Tier1 Latin script languages (b/149682724, b/150850370).
+*   Launch Russian annotator model for address and phone (b/147791251).
+*   Properly encode phone numbers in call action intents (b/145928111).
+
+v705:
+
+*   The model supports the dictionary entity (b/123705564).
+*   The model supports the OTP (One-Time Password) or auth code entity
+    (b/134552917).
+*   Restricted use of ICAO codes in the flight number annotator (b/137838622).
+*   Treat airline codes that overlap with stop words as low confidence
+    (b/141149526).
+*   Datetime behavior changed in cases where there are multiple overlapping
+    datetime annotations of equal length (cl/275903975).
+*   Url behaviour changed in cases where it contains an email address: Exclude
+    url like characters (@, %, #) from possible url boundaries. (b/143739018).
+*   Improve assembly of url pattern (internal change).
+*   Handle parentheses in urls (b/143948107).
+*   Extended support of special characters in urls (b/144467403).
+*   Allow for arbitrary tld in case a url scheme is specified in url patterns
+    (b/143854629).
+*   Add support for units (b/141230617).
+*   Improved coverage for Japanese datetime annotations (b/139900919,
+    b/139900755, b/139901786, b/139900756).
+*   Implement a Japanese duration annotator (b/144340002).
+*   Support number annotations in Japanese (b/144382649).
+*   Rollback: Long dashes in phone number makes them undetectable (b/137776705).
+
+v704:
+
+*   Extended parcel tracking number patterns.
+*   Fix month collisions in datetime annotator (b/127698395).
+*   Fix number annotator to recognize negative numbers (b/129268457).
+*   Fix an issue that "money" string is misclassified as "address".
+*   Fix url annotator to recognize missing trailing characters (b/133475475).
+*   Extend handling of payment card numbers (b/137623829).
+*   The number annotator to support percentages (b/134579664).
+*   Add payment card extra data (b/266874971).
+*   Add flight number extra data (b/139080312).
+*   Add configuration to prefer future date in case of unspecified one
+    (b/139112907).
+*   Extend the format of recognized ISBN numbers (b/139916753).
+*   Fix an issue that date time smart selections fail intermittently
+    (b/128411192).
+*   Fix an issue that long float numbers were annotated as phone numbers
+    (b/140159349).
+*   Fix an issue that numbers followed by punctuation marks were not annotated
+    (cl/267349151).
+*   Bundle action strings with annotator model (b/138561244).
+*   Long dashes in phone number makes them undetectable (b/137776705).
+
+v702:
+
+*   Added support for multi-line SmartSelection (b/35416387).
+*   Enable tokenization on script change (b/122302060).
+*   Added Linkify support for 5- to 6-digit phone numbers in non-English
+    languages (b/113966386).
+*   Fix url pattern to support trailing slashes and other delimiters
+    (b/74519011).
+*   Datetime model fixes: "7 a.m. tomorrow", or "7 a.m" (b/120966495).
+*   Outputs more datetime annotations for RAW usecase (b/120966495).
+*   Added annotations for money expressions (b/124649289).
+
+v701: [Available for Android Q droidfood]
+
+*   Low-confidence phone regexes removed from models, so that we avoid them
+    overriding the neural network decisions (preparation for training with
+    negative context).
+*   Intent configuration for annotator.
+
+v700:
+
+*   Fixed annotation of certain internal links (e.g. b/1234567) as phone numbers
+    (b/110359942, cl/208022688).
+*   Add support for dictionary terms.
+
